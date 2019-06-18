@@ -226,7 +226,7 @@ delayMicroseconds(2);
 
 // Sets the trigPin on HIGH state for 10 micro seconds
 digitalWrite(Trig, HIGH);
-delayMicroseconds(10);
+delayMicroseconds(5);
 digitalWrite(Trig, LOW);
 
 // Reads the echoPin, returns the sound wave travel time in microseconds
@@ -241,8 +241,10 @@ int RunAuto(){
   long r = random(0,2); 
   Up();
   int distance = sensor();
-  if(distance < 15){
-
+  if(distance < 10){
+    Down();
+    delay(1500);
+    Up();
     if(r == 0) { 
     Left(1);
     Serial.println("Auto left");
@@ -252,9 +254,8 @@ int RunAuto(){
     Serial.println("Auto Right");  
   }
     
-   delay(1000);
+   delay(2000);
    Up();
-
   }
 }
 
