@@ -1,5 +1,5 @@
 
-int BluetoothData; // the data given from Computer
+int BluetoothData; 
 int Run = 0;
 int Goingup = -1;
 int Auto = 0;
@@ -28,21 +28,19 @@ const int Echo = 7;
 void setup() {
 
 
-// put your setup code here, to run once:
 
-// Inicializa los pines del motor como salidas
 
-pinMode(EnableA, OUTPUT); // sets the pin as output
+pinMode(EnableA, OUTPUT);
 
-pinMode(InA1, OUTPUT); // sets the pin as output
+pinMode(InA1, OUTPUT);
 
-pinMode(InA2, OUTPUT); // sets the pin as output
+pinMode(InA2, OUTPUT); 
 
-pinMode(EnableB, OUTPUT); // sets the pin as output
+pinMode(EnableB, OUTPUT); 
 
-pinMode(InB1, OUTPUT); // sets the pin as output
+pinMode(InB1, OUTPUT); 
 
-pinMode(InB2, OUTPUT); // sets the pin as output
+pinMode(InB2, OUTPUT); 
 
 digitalWrite(EnableA, LOW);
 
@@ -63,7 +61,6 @@ Serial.println("Bluetooth on");
 
 void loop() {
 
-//put your main code here, to run repeatedly:
 
 if(Serial.available() > 0){ // Checks whether data is comming from the serial port
  BluetoothData = Serial.read(); // Reads the data from the serial port
@@ -99,7 +96,7 @@ else if (BluetoothData == 8){
 
 if(Run == 1){
 if (Auto == 0){
-   //if number 3 presssed it means go UP ..
+   // if the Up button pessed
 if(BluetoothData == 3){
   Serial.println("go up");
 Up();
